@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NolanHodge.Threader</name>
+    </assembly>
+    <members>
+        <member name="T:NolanHodge.Threader.IThreader">
+            <summary>
+            IThreader interfaces need supply only a few methods
+            </summary>
+        </member>
+        <member name="M:NolanHodge.Threader.IThreader.Action">
+            <summary>
+            Action is called by the Threader class during parallel execution.
+            </summary>
+        </member>
+        <member name="P:NolanHodge.Threader.IThreader.Name">
+            <summary>
+            Name is used by Threader to maintain the state of the IThreader running in parallel.
+            </summary>
+        </member>
+        <member name="T:NolanHodge.Threader.Threader">
+            <summary>
+            A Threader is an object that maintains Task states and supplies them to a user like they are Threads.
+            </summary>
+        </member>
+        <member name="M:NolanHodge.Threader.Threader.Spawn(NolanHodge.Threader.IThreader)">
+            <summary>
+            Spawn a new thread running the Action supplied by the IThreader.
+            Multiple IThreaders under the same name can run together, although they will be killed together unless given unique names.
+            </summary>
+            <param name="threader"> The IThreader object to be maintained by Threader </param>
+        </member>
+        <member name="M:NolanHodge.Threader.Threader.Killed(NolanHodge.Threader.IThreader)">
+            <summary>
+            Killed will return the stopped/running state of a IThreader object.
+            </summary>
+            <param name="threader">The IThreader object being maintained by Threader</param>
+            <returns></returns>
+        </member>
+        <member name="M:NolanHodge.Threader.Threader.Kill(NolanHodge.Threader.IThreader)">
+            <summary>
+            Kill will send a signal to stop all IThreader objects under the name IThreader.Name.
+            </summary>
+            <param name="threader">The IThreader object being maintained by Threader</param>
+        </member>
+        <member name="M:NolanHodge.Threader.Threader.KillAll">
+            <summary>
+            KillAll will send a signal to stop all of the IThreader objects maintained by Threader.
+            </summary>
+        </member>
+    </members>
+</doc>
