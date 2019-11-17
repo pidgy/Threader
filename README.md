@@ -1,5 +1,7 @@
 # Threader
 
+https://www.nuget.org/packages/NolanHodge.Threader/1.0.0
+
 Threader is a nuget package for running Tasks in parallel like they are System.Threading.Threads.
 
 This package is optimized for long running operations. The UWP 10.0 framework does not allow the usage of Threads, but rather Tasks.
